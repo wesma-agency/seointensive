@@ -1,0 +1,9 @@
+.header {
+    &--three {
+        .nav__item {
+            & a {
+                color: #000000;
+            }
+        }
+    }
+}

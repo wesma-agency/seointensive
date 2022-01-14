@@ -1,0 +1,42 @@
+.promotion {
+    &--page-4 {
+        .promotion__row--one {
+            background: url("../img/page-4-promotion-image-bg.png") no-repeat bottom / cover;
+        }
+    }
+}
+
+.conditions {
+    &--page-4 {
+        background: none;
+        & .container {
+            padding: 10px 15px 150px;
+            &::before {
+                content: none;
+            }
+            &::after {
+                top: -15%;
+                height: 100%;
+                width: 100vw;
+            }
+        }
+        .conditions__title {
+            padding-left: 100px;
+            text-align: start;
+        }
+    }
+}
+
+.cases {
+    &--page-4 {
+        & .container {
+            padding: 0px 15px 86px 15px;
+        }
+    }
+}
+
+// .cooperation-logic {
+//     &--page-4 {
+//         padding-bottom: 0;
+//     }
+// }

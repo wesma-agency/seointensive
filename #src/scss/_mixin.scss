@@ -1,0 +1,17 @@
+$maxWidth: 1590; //ШИРИНА МАКЕТА
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+    //pcSize - МАКЕТНЫЙ РАЗМЕР ШРИФТА //МИНИМАЛЬНЫЙ РАЗМЕР ШРИФТА/
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+//========================================================СТИЛИ ШРИФТОВ========================================================
+
+@mixin font-param($size, $color, $weight, $line) {
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+    line-height: $line;
+}

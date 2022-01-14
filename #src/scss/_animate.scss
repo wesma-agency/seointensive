@@ -1,0 +1,428 @@
+@keyframes jumping {
+    // c
+    0% {
+        transform: translate(-50%, 42%);
+    }
+
+    // b
+    10% {
+        transform: translate(-50%, 55%);
+    }
+
+    // c
+    20% {
+        transform: translate(-50%, 42%);
+    }
+
+    // b
+    30% {
+        transform: translate(-50%, 55%);
+    }
+
+    // c
+    40% {
+        transform: translate(-50%, 42%);
+    }
+
+    // c
+    100% {
+        transform: translate(-50%, 42%);
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: translate(-550px, 0) scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(0, 0) scale(0.7);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.fadeInScale {
+    &.animate {
+        animation-name: fadeInScale;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+        animation-fill-mode: both;
+    }
+}
+
+.fadeIn {
+    opacity: 0;
+    transform: translate(-150px, 0);
+    transition: all 0.6s ease;
+    &.animate {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+.slideTo {
+    opacity: 0;
+    transform: translate(0, 100px);
+    transition: all 0.6s ease;
+    &.animate {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+.header {
+    &__title {
+        transition: all 0.6s ease;
+    }
+    &__subtitle {
+        &--one {
+            transition: all 0.6s ease 0.2s;
+        }
+        &--two {
+            transition: all 0.6s ease 0.4s;
+        }
+    }
+    &.scrolled {
+        .nav__item {
+            & a {
+                &::before {
+                    background: #000000;
+                }
+            }
+        }
+    }
+    &--three {
+        .nav__item {
+            & a {
+                &::before {
+                    background: #000000;
+                }
+            }
+        }
+    }
+}
+
+.promo {
+    &__subtitle {
+        animation-delay: 0.2s;
+    }
+}
+
+.nav {
+    &__button {
+        &:hover {
+            & span {
+                background-color: #ff0000;
+                transition: all 0.3s ease;
+                &::before {
+                    transition: all 0.3s ease;
+                    filter: invert(1);
+                }
+            }
+        }
+    }
+
+    &__item {
+        a {
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -2px;
+                width: 0;
+                height: 2px;
+                margin: auto;
+                opacity: 0;
+                background: #ffffff;
+                transition: all 0.3s ease;
+            }
+            &:hover {
+                &::before {
+                    opacity: 1;
+                    width: 100%;
+                }
+            }
+        }
+        &:nth-of-type(2) {
+            & a {
+                &::before {
+                    background: #000000;
+                }
+            }
+        }
+    }
+
+    &__phone {
+        & a {
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -2px;
+                width: 0;
+                height: 2px;
+                margin: auto;
+                opacity: 0;
+                background: #201600;
+                transition: all 0.3s ease;
+            }
+            &:hover {
+                &::before {
+                    opacity: 1;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.main-btn {
+    transition: all 0.3s ease;
+    &::before {
+        transition: all 0.3s ease;
+    }
+    &:hover {
+        background-color: #ffffff;
+        box-shadow: 0 0 0 1px #ff0000;
+        color: #000000;
+        &::before {
+            filter: brightness(0);
+        }
+    }
+}
+
+.card-price {
+    transition: all 0.6s ease 0.2s;
+    &--big {
+        transition: all 0.6s ease;
+    }
+}
+
+.contact {
+    &__column {
+        opacity: 0;
+        transition: all 0.3s ease;
+        &--one {
+            transform: translate(-150px, 0);
+        }
+        &--two {
+            transform: translate(150px, 0);
+        }
+        &.animate {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+}
+
+.slick-arrow {
+    transition: all 0.3s ease;
+    &:hover {
+        border: 1px solid #6a6a6a;
+        background-color: #ffffff;
+        &::before {
+            filter: brightness(0.5);
+        }
+    }
+}
+
+.guarantee {
+    &__subtitle {
+        transition: all 0.3s ease 0.2s;
+    }
+
+    &__text {
+        transition: all 0.3s ease 0.3s;
+    }
+}
+
+.order {
+    &__subtitle {
+        transition: all 0.6s ease 0.2s;
+    }
+    &__text {
+        &::before {
+            transition: all 0.6s ease 0.2s;
+            transform: rotate(-180deg);
+        }
+        &.animate {
+            &.order__text::before {
+                transform: rotate(0deg) !important;
+            }
+        }
+    }
+    &__form {
+        transform: translate(150px, 0);
+    }
+}
+
+.card-item {
+    &::after {
+        transition: all 0.3s ease;
+    }
+
+    &.animate {
+        &.card-item::after {
+            animation-name: rotation;
+            animation-duration: 5s;
+            animation-fill-mode: none;
+        }
+    }
+}
+
+.side-menu {
+    &__item {
+        & a {
+            &:hover {
+                color: #ff0000;
+                border-bottom: 1px solid #ff0000;
+            }
+        }
+    }
+}
+
+.animate-canvas {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card-competences {
+    &:first-child {
+        transition: all 0.6s ease;
+    }
+    &:nth-child(2) {
+        transition: all 0.6s ease 0.2s;
+    }
+    &:last-child {
+        transition: all 0.6s ease 0.4s;
+    }
+}
+
+.item-advantage-1 {
+    &:last-child {
+        transform: translate(150px, 0);
+        &.animate {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+}
+
+.footer__text,
+.footer__text-2 {
+    a {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            margin: auto;
+            opacity: 0;
+            background: #ffffff;
+            transition: all 0.3s ease;
+        }
+        &:hover {
+            &::before {
+                opacity: 1;
+                width: 100%;
+            }
+        }
+    }
+}
+
+$bars: 8;
+
+.m-image {
+    &__bar {
+        $barRef: &;
+        will-change: transform;
+        opacity: 0;
+        &-image {
+            @for $i from 1 through $bars {
+                #{$barRef}:nth-child(#{$i}) & {
+                    left: (($i - 1) / $bars * 48.9) * -1vw;
+                }
+            }
+        }
+
+        &--animated {
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            @for $i from 1 through $bars {
+                &:nth-child(#{$i}) {
+                    animation-delay: ($i - 1) * 0.15s;
+                }
+            }
+        }
+    }
+}
+
+@keyframes flipInY {
+    from {
+        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    40% {
+        transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+        animation-timing-function: ease-in;
+    }
+
+    60% {
+        transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+        opacity: 1;
+    }
+
+    80% {
+        transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    }
+
+    to {
+        transform: perspective(400px);
+        opacity: 1;
+    }
+}
+
+.flipInY {
+    backface-visibility: visible;
+    animation-name: flipInY;
+}
+
+.personality-dev__item-wrap {
+    &:first-child {
+    }
+
+    &:last-child {
+        transform: translate(150px, 0);
+        &.animate {
+            transform: translate(0px, 0);
+        }
+    }
+}
